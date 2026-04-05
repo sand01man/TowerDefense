@@ -1,11 +1,30 @@
 [gd_scene format=3 uid="uid://bdtknw27u8ldw"]
 
 [ext_resource type="Texture2D" uid="uid://c06dsq2gfbcd8" path="res://mobs/mouse_01.png" id="1_bteyy"]
+[ext_resource type="Script" uid="uid://8gaiiwo8sx0m" path="res://mobs/mob.gd" id="1_fgbma"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgbma"]
-radius = 168.6179
+radius = 47.6
+
+[sub_resource type="Theme" id="Theme_p7hwu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4p423"]
+bg_color = Color(0.08309954, 0.11588358, 0.28973326, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxx3d"]
+bg_color = Color(0.36910948, 0.84715873, 0.32628572, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
 
 [node name="Mob" type="Area2D" unique_id=1521734940]
+script = ExtResource("1_fgbma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=652857176]
 shape = SubResource("CircleShape2D_fgbma")
@@ -13,3 +32,17 @@ shape = SubResource("CircleShape2D_fgbma")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=286676206]
 position = Vector2(-5, 0)
 texture = ExtResource("1_bteyy")
+
+[node name="BarPivot" type="Node2D" parent="." unique_id=49923866]
+
+[node name="HealthBar" type="ProgressBar" parent="BarPivot" unique_id=1721792768]
+unique_name_in_owner = true
+offset_left = -83.0
+offset_top = -82.0
+offset_right = 92.0
+offset_bottom = -55.0
+theme = SubResource("Theme_p7hwu")
+theme_override_styles/background = SubResource("StyleBoxFlat_4p423")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cxx3d")
+value = 71.15
+show_percentage = false

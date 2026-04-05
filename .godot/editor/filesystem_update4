@@ -1,3 +1,7 @@
 res://simple_rocket.gd
 res://turrets/weapons/simple_cannon.gd
 res://turrets/weapons/weapon.gd
+res://mobs/mob.tscn
+res://mobs/mob.gd
+res://turrets/weapons/simple_cannon.tscn
+res://mobs/damage_indicator.tscn
