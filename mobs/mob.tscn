@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c06dsq2gfbcd8" path="res://mobs/mouse_01.png" id="1_bteyy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgbma"]
-radius = 26.907248
+radius = 168.6179
 
 [node name="Mob" type="Area2D" unique_id=1521734940]
 

@@ -15,6 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="M11. Tower Defense (Workbook)"
+run/main_scene="uid://bdtknw27u8ldw"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
 
@@ -26,7 +27,6 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="canvas_items"

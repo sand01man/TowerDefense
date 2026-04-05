@@ -1,1 +1,3 @@
-res://addons/gdpractice/assets/theme.tres
+res://simple_rocket.gd
+res://turrets/weapons/simple_cannon.gd
+res://turrets/weapons/weapon.gd
