@@ -1,5 +1,8 @@
 class_name Mob extends Area2D
 
+@onready var _bar_pivot: Node2D = %BarPivot
+
+@export var speed := 100.0
 @export var health := 100:
 	set = set_health
 var tween: Tween = null
@@ -31,3 +34,6 @@ func take_damage(damage) -> void:
 	
 func _die() -> void:
 	queue_free()
+	
+func _physics_process(delta: float) -> void:
+	_bar_pivot.global_rotation = 0.0

@@ -9,6 +9,7 @@ texture = ExtResource("1_q2m6g")
 script = ExtResource("2_5dibf")
 
 [node name="Mob" parent="." unique_id=1521734940 instance=ExtResource("3_igcxb")]
+unique_name_in_owner = true
 position = Vector2(298, 350)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Mob" unique_id=822835088]

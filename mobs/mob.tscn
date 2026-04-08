@@ -34,6 +34,7 @@ position = Vector2(-5, 0)
 texture = ExtResource("1_bteyy")
 
 [node name="BarPivot" type="Node2D" parent="." unique_id=49923866]
+unique_name_in_owner = true
 
 [node name="HealthBar" type="ProgressBar" parent="BarPivot" unique_id=1721792768]
 unique_name_in_owner = true

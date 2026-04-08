@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://buxud23yyccyi"]
+[gd_resource type="TileSet" format=3 uid="uid://buxud23yyccyi"]
 
 [ext_resource type="Texture2D" uid="uid://bm5nxkq3f056o" path="res://map/towerdefense_tilemap.png" id="1"]
 
@@ -336,6 +336,9 @@ texture_region_size = Vector2i(128, 128)
 0:5/0/terrains_peering_bit/left_side = 0
 0:5/0/terrains_peering_bit/top_side = 0
 0:5/0/terrains_peering_bit/top_right_corner = 0
+7:3/0 = 0
+7:4/0 = 0
+7:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbmqy"]
 resource_name = "Grass"

@@ -118,6 +118,7 @@ libraries/ = SubResource("AnimationLibrary_13ibc")
 
 [node name="Label" type="Label" parent="." unique_id=596575738]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 50
 offset_left = -20.0
 offset_top = -13.0
 offset_right = 40.0
