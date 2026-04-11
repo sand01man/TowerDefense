@@ -18,6 +18,7 @@ func _create_collision_shape_2d() -> CollisionShape2D:
 	return collision_shape
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("adding turret nodes")
 	add_child(_area_2d) # Replace with function body.
 	_area_2d.add_child(_collision_shape_2d)
 # Called every frame. 'delta' is the elapsed time since the previous frame.

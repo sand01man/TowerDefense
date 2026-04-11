@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cxasq1utioegg"]
+
+[ext_resource type="Script" uid="uid://y7hv1qn4dexx" path="res://turrets/turret.gd" id="1_amdcu"]
+
+[node name="Turret" type="Sprite2D" unique_id=1843782573]
+script = ExtResource("1_amdcu")
+metadata/_custom_type_script = "uid://y7hv1qn4dexx"

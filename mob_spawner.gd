@@ -3,7 +3,6 @@ class_name MobSpawner extends Node2D
 var mob_packed_scene = preload("res://mobs/mob.tscn")
 @onready var timer: Timer = %Timer
 @export var timer_wait_time = 2
-@export var total_mobs : int  = 100
 @export var wave_amount : int = 10
 @export var wave_interval := 30
 var mobs_this_wave := 2

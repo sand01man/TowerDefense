@@ -45,5 +45,5 @@ offset_bottom = -55.0
 theme = SubResource("Theme_p7hwu")
 theme_override_styles/background = SubResource("StyleBoxFlat_4p423")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cxx3d")
-value = 71.15
+value = 100.0
 show_percentage = false

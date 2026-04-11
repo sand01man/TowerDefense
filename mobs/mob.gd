@@ -19,11 +19,11 @@ func set_health(new_health: int) -> void:
 			tween.kill()
 			tweens_running -= 1
 			tween = create_tween()
-			tween.tween_property(_health_bar, "value", new_health, 1.0)
+			tween.tween_property(_health_bar, "value", new_health, 0.2)
 			tweens_running += 1
 		else:
 			tween = create_tween()
-			tween.tween_property(_health_bar, "value", new_health, 1.0)
+			tween.tween_property(_health_bar, "value", new_health, 0.2)
 			tweens_running += 1
 
 	if health <= 0:

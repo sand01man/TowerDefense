@@ -1,8 +1,1 @@
-res://mobs/mob.gd
-res://map/tileset.tres
-res://mob_path_follow.gd
-res://mobs/mob.tscn
-res://tower_defense.tscn
-res://mob_spawner.gd
-res://turrets/weapons/simple_cannon.tscn
-res://turrets/weapons/simple_cannon.gd
+res://tower_defense.gd
