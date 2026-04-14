@@ -8,8 +8,6 @@ var health := 6: set = set_health
 func _ready() -> void:
 
 	print("heyo")
-	var tween = create_tween()
-	tween.tween_property(self,"health", 0, 2.0)
 	
 	PlayerUI.health_depleted.connect(
 		func() -> void:

@@ -6,3 +6,8 @@
 [node name="SimpleCannon" type="Sprite2D" unique_id=1842444484]
 texture = ExtResource("1_q2m6g")
 script = ExtResource("2_5dibf")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1565821321]
+unique_name_in_owner = true
+position = Vector2(62, 0)
+gizmo_extents = 45.4

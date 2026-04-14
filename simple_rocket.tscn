@@ -7,6 +7,7 @@
 size = Vector2(53, 14)
 
 [node name="SimpleRocket" type="Area2D" unique_id=1604133627]
+z_index = -1
 rotation = 0.682354
 script = ExtResource("1_bi34i")
 max_distance = 3000.0

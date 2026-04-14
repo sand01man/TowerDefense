@@ -1,4 +1,5 @@
 class_name SimpleCannon extends Weapon
+@onready var spawn_point: Node2D = %SpawnPoint
 
 func _physics_process(delta: float) -> void:
 	var mobs_in_range := _area_2d.get_overlapping_areas()
@@ -16,4 +17,4 @@ func _attack() -> void:
 	
 	var rocket: Node2D = preload("res://simple_rocket.tscn").instantiate()
 	get_tree().current_scene.add_child(rocket)
-	rocket.global_transform = global_transform
+	rocket.global_transform = spawn_point.global_transform
