@@ -11,6 +11,10 @@ func _ready() -> void:
 		func (_other_area: Area2D) -> void:
 			PlayerUI.health -= 1
 	)
+	for current_child: Node in get_children():
+		if current_child is MobSpawner:
+			var path = _roads.find_path_to_target(current_child, _player_hurtbox)
+			current_child.initialize_path(path)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse_click"):

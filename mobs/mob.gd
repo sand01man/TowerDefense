@@ -1,4 +1,5 @@
 class_name Mob extends Area2D
+@onready var sprite_2d: Sprite2D = %Sprite2D
 
 @onready var _bar_pivot: Node2D = %BarPivot
 
@@ -37,3 +38,7 @@ func _die() -> void:
 	
 func _physics_process(delta: float) -> void:
 	_bar_pivot.global_rotation = 0.0
+	var last_global_rotation := 0.0
+	var target_rotation = get_parent().global_rotation
+	last_global_rotation = lerp_angle(last_global_rotation, target_rotation, delta * 6.0)
+	sprite_2d.global_rotation = last_global_rotation

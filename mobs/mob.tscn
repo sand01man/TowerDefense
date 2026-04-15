@@ -30,6 +30,7 @@ script = ExtResource("1_fgbma")
 shape = SubResource("CircleShape2D_fgbma")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=286676206]
+unique_name_in_owner = true
 position = Vector2(-5, 0)
 texture = ExtResource("1_bteyy")
 

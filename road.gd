@@ -1,12 +1,13 @@
 class_name Roads extends TileMapLayer
 
-@onready var road: Roads = %Road
-
 var astar_2d := AStar2D.new()
 var road_tiles := get_used_cells()
 
 var map_size = get_used_rect().size
 
+
+func _ready() -> void: 
+	_prepare_pathfinding_graph()
 
 func _prepare_pathfinding_graph() -> void:
 	for current_cell: Vector2i in road_tiles:
@@ -21,3 +22,21 @@ func _calculate_index(cell_coordinates: Vector2i) -> int:
 			var neighbor_position := current_cell + current_neighbor
 			if get_cell_source_id(neighbor_position) == -1:
 				continue
+			var current_cell_index := _calculate_index(current_cell)
+			var next_index := _calculate_index(neighbor_position)
+			
+			if not astar_2d.are_points_connected(current_cell_index, next_index):
+				astar_2d.connect_points(current_cell_index, next_index)
+
+func find_path_to_target(mob_spawner_node: Node2D, target_node: Node2D) -> PackedVector2Array:
+		var target_position := local_to_map(target_node.global_position)
+		var start_position := local_to_map(mob_spawner_node.global_position)
+		
+		var start_index := _calculate_index(start_position) 
+		var end_index := _calculate_index(target_position)
+		
+		var cell_coordinates := astar_2d.get_point_path(start_index, end_index)
+		var world_coordinates := PackedVector2Array()
+		for current_cell in cell_coordinates:
+			world_coordinates.append(map_to_local(current_cell))
+		return world_coordinates

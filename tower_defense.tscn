@@ -3,16 +3,8 @@
 [ext_resource type="TileSet" uid="uid://buxud23yyccyi" path="res://map/tileset.tres" id="1_g65fu"]
 [ext_resource type="Script" uid="uid://dth5oftiogoyh" path="res://tower_defense.gd" id="1_l7pho"]
 [ext_resource type="Script" uid="uid://b3gyne728wpef" path="res://mob_spawner.gd" id="2_l7pho"]
-[ext_resource type="Script" uid="uid://clrwtq44oa23r" path="res://mob_path_follow.gd" id="2_pdqjs"]
-[ext_resource type="PackedScene" uid="uid://bdtknw27u8ldw" path="res://mobs/mob.tscn" id="3_l7pho"]
 [ext_resource type="Script" uid="uid://egjy4xt62lpf" path="res://road.gd" id="3_rqaol"]
 [ext_resource type="PackedScene" uid="uid://boink4jjwtbi1" path="res://winscreen.tscn" id="8_6t0jg"]
-
-[sub_resource type="Curve2D" id="Curve2D_4xjh4"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1472, -400, 0, 0, 0, 0, 1472, 448, 0, 0, 0, 0, 1088, 448, 0, 0, 0, 0, 1088, 64, 0, 0, 0, 0, 576, 64, 0, 0, 0, 0, 576, 448, 0, 0, 0, 0, 192, 448, 0, 0, 0, 0, 192, 960, 0, 0, 0, 0, 576, 960, 0, 0, 0, 0, 576, 832, 0, 0, 0, 0, 1600, 832, 0, 0, 0, 0, 1600, 1264)
-}
-point_count = 12
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdqjs"]
 size = Vector2(92, 58)
@@ -28,6 +20,16 @@ tile_map_data = PackedByteArray("AAD+//7/AAAHAAMAAAD+////AAAHAAMAAAD+/wAAAAAHAAQ
 tile_set = ExtResource("1_g65fu")
 collision_enabled = false
 
+[node name="MobSpawner" type="Node2D" parent="." unique_id=436837330]
+position = Vector2(1472, -322)
+script = ExtResource("2_l7pho")
+timer_wait_time = 0.5
+wave_interval = 1.0
+
+[node name="Timer" type="Timer" parent="MobSpawner" unique_id=497988311]
+unique_name_in_owner = true
+wait_time = 2.0
+
 [node name="Road" type="TileMapLayer" parent="." unique_id=490652046]
 unique_name_in_owner = true
 z_index = -90
@@ -35,30 +37,6 @@ tile_map_data = PackedByteArray("AAALAP3/AAAFAAEAAAALAP7/AAACAAEAAAALAP//AAACAAE
 tile_set = ExtResource("1_g65fu")
 collision_enabled = false
 script = ExtResource("3_rqaol")
-
-[node name="MobSpawner" type="Node2D" parent="Road" unique_id=436837330]
-script = ExtResource("2_l7pho")
-timer_wait_time = 0.5
-wave_interval = 1.0
-
-[node name="Timer" type="Timer" parent="Road/MobSpawner" unique_id=497988311]
-unique_name_in_owner = true
-wait_time = 2.0
-
-[node name="Path2D" type="Path2D" parent="Road/MobSpawner" unique_id=84694024]
-unique_name_in_owner = true
-curve = SubResource("Curve2D_4xjh4")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Road/MobSpawner/Path2D" unique_id=1784401130]
-position = Vector2(1472, -400)
-rotation = 1.5707964
-loop = false
-script = ExtResource("2_pdqjs")
-
-[node name="Mob" parent="Road/MobSpawner/Path2D/PathFollow2D" unique_id=1521734940 instance=ExtResource("3_l7pho")]
-unique_name_in_owner = true
-position = Vector2(-6.8189765e-06, 0)
-speed = 1000.0
 
 [node name="PlayerHurtBox" type="Area2D" parent="." unique_id=955087034]
 unique_name_in_owner = true

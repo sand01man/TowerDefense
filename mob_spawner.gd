@@ -1,5 +1,6 @@
 class_name MobSpawner extends Node2D
-@onready var _path: Path2D = %Path2D
+var _path := Path2D.new()
+@onready var road: Roads = %Road
 var mob_packed_scene = preload("res://mobs/mob.tscn")
 @onready var timer: Timer = %Timer
 @onready var winscreen: Control = %Winscreen
@@ -15,6 +16,16 @@ func _ready() -> void:
 	spawn_mob()
 	waves_begun += 1
 	timer.start()
+	_path.top_level = true
+	add_child(_path)
+	_path.curve = Curve2D.new()
+	
+	
+	
+func initialize_path(points: PackedVector2Array) -> void:
+	_path.curve.clear_points()
+	for point in points:
+		_path.curve.add_point(point)
 	
 func spawn_mob() -> void:
 	if waves_begun <= wave_amount:
@@ -38,5 +49,5 @@ func spawn_mob() -> void:
 func mob_amount_counter() -> void:
 	waves_begun += 1
 	
-	
+
 # Called when the node enters the scene tree for the first time.
