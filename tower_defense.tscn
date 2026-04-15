@@ -58,6 +58,7 @@ script = ExtResource("2_pdqjs")
 [node name="Mob" parent="Road/MobSpawner/Path2D/PathFollow2D" unique_id=1521734940 instance=ExtResource("3_l7pho")]
 unique_name_in_owner = true
 position = Vector2(-6.8189765e-06, 0)
+speed = 1000.0
 
 [node name="PlayerHurtBox" type="Area2D" parent="." unique_id=955087034]
 unique_name_in_owner = true

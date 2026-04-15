@@ -1,6 +1,0 @@
-res://winscreen.tscn
-res://map/tileset.tres
-res://tower_defense.tscn
-res://mob_spawner.gd
-res://tower_defense.gd
-res://road.gd

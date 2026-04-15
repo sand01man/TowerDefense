@@ -27,6 +27,7 @@ func set_health(new_health) -> void:
 	health = clampi(new_health, 0, 6)
 	var health_sprites_list : Array = h_box_container.get_children()
 	#print(health_sprites_list[0].get_index())
-	health_sprites_list[health - 1].visible = false
+	for current_heart in health_sprites_list:
+			current_heart.visible = health > current_heart.get_index()
 	if health == 0:
 		health_depleted.emit()
