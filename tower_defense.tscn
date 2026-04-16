@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dth5oftiogoyh" path="res://tower_defense.gd" id="1_l7pho"]
 [ext_resource type="Script" uid="uid://b3gyne728wpef" path="res://mob_spawner.gd" id="2_l7pho"]
 [ext_resource type="Script" uid="uid://egjy4xt62lpf" path="res://road.gd" id="3_rqaol"]
+[ext_resource type="PackedScene" uid="uid://pvn4ds1etimc" path="res://coin_collector.tscn" id="6_4xjh4"]
 [ext_resource type="PackedScene" uid="uid://boink4jjwtbi1" path="res://winscreen.tscn" id="8_6t0jg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pdqjs"]
@@ -21,10 +22,11 @@ tile_set = ExtResource("1_g65fu")
 collision_enabled = false
 
 [node name="MobSpawner" type="Node2D" parent="." unique_id=436837330]
-position = Vector2(1472, -322)
+position = Vector2(1469, -45)
 script = ExtResource("2_l7pho")
-timer_wait_time = 0.5
-wave_interval = 1.0
+mob_spawn_interval = 1.0
+wave_amount = 1000.0
+wave_interval = 0.5
 
 [node name="Timer" type="Timer" parent="MobSpawner" unique_id=497988311]
 unique_name_in_owner = true
@@ -40,11 +42,14 @@ script = ExtResource("3_rqaol")
 
 [node name="PlayerHurtBox" type="Area2D" parent="." unique_id=955087034]
 unique_name_in_owner = true
+position = Vector2(1603, 1218)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHurtBox" unique_id=1640049159]
-position = Vector2(1598, 1270)
 shape = SubResource("RectangleShape2D_pdqjs")
 
 [node name="Winscreen" parent="." unique_id=1027528635 instance=ExtResource("8_6t0jg")]
 unique_name_in_owner = true
 visible = false
+
+[node name="CoinCollector" parent="." unique_id=1140122305 instance=ExtResource("6_4xjh4")]
+position = Vector2(-209, -219)

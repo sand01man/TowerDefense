@@ -14,8 +14,7 @@ func _prepare_pathfinding_graph() -> void:
 		var current_cell_index := _calculate_index(current_cell)
 		astar_2d.add_point(current_cell_index, current_cell)
 
-func _calculate_index(cell_coordinates: Vector2i) -> int:
-	return cell_coordinates.x + (cell_coordinates.y * map_size.x) + 10_000
+
 # Called when the node enters the scene tree for the first time.
 	for current_cell: Vector2i in road_tiles:
 		for current_neighbor: Vector2i in [Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT]:
@@ -40,3 +39,5 @@ func find_path_to_target(mob_spawner_node: Node2D, target_node: Node2D) -> Packe
 		for current_cell in cell_coordinates:
 			world_coordinates.append(map_to_local(current_cell))
 		return world_coordinates
+func _calculate_index(cell_coordinates: Vector2i) -> int:
+	return cell_coordinates.x + (cell_coordinates.y * map_size.x) + 10_000

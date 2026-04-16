@@ -33,7 +33,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("right_mouse_click"):
 		var mouse_position  = grass.local_to_map(get_global_mouse_position())
 		if _game_board.has(mouse_position):
-			print("we have this mouse_position")
 			if is_instance_valid(_game_board[mouse_position]):
 				_game_board[mouse_position].queue_free()
 				_game_board.erase(mouse_position)
@@ -44,11 +43,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _place_turret(creation_position : Vector2i) -> void:
 	#creation_position and mouse_position mean the same thing with the current code
 	var turret : Turret = Turret.new()
-	print(creation_position)
-	print(grass.local_to_map(creation_position))
 	turret.position = grass.map_to_local(creation_position)
-	print(turret.position)
-	print(grass.local_to_map(turret.position))
 	#this adds the mouse_positon to the _game_board dictionary, AS A LOCAL POSITION
 	_game_board.get_or_add(creation_position, turret)
 	add_child(turret)

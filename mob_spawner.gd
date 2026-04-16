@@ -4,7 +4,7 @@ var _path := Path2D.new()
 var mob_packed_scene = preload("res://mobs/mob.tscn")
 @onready var timer: Timer = %Timer
 @onready var winscreen: Control = %Winscreen
-@export var timer_wait_time := 2.0
+@export var mob_spawn_interval := 2.0
 @export var wave_amount : float = 10.0
 @export var wave_interval := 30.0
 var mobs_this_wave := 2
@@ -32,14 +32,13 @@ func spawn_mob() -> void:
 		for i in mobs_this_wave + (waves_begun * 2):
 			 
 			
-			await get_tree().create_timer(timer_wait_time).timeout
+			await get_tree().create_timer(mob_spawn_interval).timeout
 		
 			var mob_path_follow := MobPathFollow.new()
 			_path.add_child(mob_path_follow)
 		
 		
 			var mob : Mob = mob_packed_scene.instantiate()
-			mob.speed = 1000
 			mob_path_follow.add_child(mob)
 			mob_path_follow.mob = mob
 	if _path.get_child_count() <= 0:

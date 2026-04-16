@@ -28,7 +28,7 @@ func _init() -> void:
 	monitorable = false
 	
 func WE_ENTERED_A_AREA(area) -> void:
-	if area is Mob:
+	if area is Mob and area.alive == true:
 		area.take_damage(damage)
 		explode()
 		

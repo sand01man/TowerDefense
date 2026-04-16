@@ -1,3 +1,14 @@
 res://tower_defense.tscn
 res://map/tileset.tres
 res://tower_defense.gd
+res://road.gd
+res://mobs/mob.gd
+res://mobs/coin.tscn
+res://mobs/coin.gd
+res://player_ui.tscn
+res://player_ui.gd
+res://mobs/mob.tscn
+res://mob_spawner.gd
+res://simple_rocket.gd
+res://coin_collector.gd
+res://coin_collector.tscn
