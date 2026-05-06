@@ -22,13 +22,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		#basically its set equal to the mouses global position converted into a spot on the grid
 		var mouse_position  = grass.local_to_map(get_global_mouse_position())
 		var cell_contents := _roads.get_cell_source_id(mouse_position)
-		print(mouse_position)
 		var is_road_tile := cell_contents != -1
 		#check like 34 then come back
 		# so then when I check to see if game_board has THAT GRID POSITION
 		# it returns true if theres a spot already taken
 		if _game_board.has(mouse_position) == false and is_road_tile == false:
-			print("there isnt a turret here already")
 			_place_turret(mouse_position)
 	if event.is_action_pressed("right_mouse_click"):
 		var mouse_position  = grass.local_to_map(get_global_mouse_position())

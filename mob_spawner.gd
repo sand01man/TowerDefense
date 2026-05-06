@@ -42,7 +42,7 @@ func spawn_mob() -> void:
 			mob_path_follow.add_child(mob)
 			mob_path_follow.mob = mob
 	if _path.get_child_count() <= 0:
-		print(_path.get_child_count())
+		print("there are" + str(_path.get_child_count()) + "mobs left" )
 		winscreen.visible = true
 			 
 func mob_amount_counter() -> void:

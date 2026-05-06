@@ -12,3 +12,5 @@ res://mob_spawner.gd
 res://simple_rocket.gd
 res://coin_collector.gd
 res://coin_collector.tscn
+res://turrets/weapons/simple_cannon.gd
+res://turrets/weapons/weapon.gd

@@ -1,6 +1,24 @@
 @icon("res://icons/icon_weapon.svg")
 class_name Weapon extends Sprite2D
 
+
+var stats := WeaponStats.new(): set = _set_stats
+
+
+func _set_stats(new_stats: WeaponStats ) -> void:
+	if stats != null:
+		if stats.changed.is_connected(_update_from_stats):
+			stats.changed.disconnect(_update_from_stats)
+
+	stats = new_stats
+	if stats != null:
+		stats.changed.connect(_update_from_stats)
+
+
+func _update_from_stats() -> void:
+	_timer.wait_time = 1.0 / stats.attack_rate
+	_collision_shape_2d.shape.radius = stats.mob_detection_radius
+
 var _area_2d := _create_area_2d()
 @onready var _collision_shape_2d := _create_collision_shape_2d()
 @export var mob_detection_range := 400.0
@@ -18,7 +36,6 @@ func _create_collision_shape_2d() -> CollisionShape2D:
 	return collision_shape
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("adding turret nodes")
 	add_child(_area_2d) # Replace with function body.
 	_area_2d.add_child(_collision_shape_2d)
 # Called every frame. 'delta' is the elapsed time since the previous frame.

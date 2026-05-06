@@ -3,7 +3,6 @@ class_name Mob extends Area2D
 
 @onready var _bar_pivot: Node2D = %BarPivot
 var alive: bool = true
-static var call_count = 0
 
 @export var speed := 100.0
 @export var health := 100:
@@ -42,8 +41,6 @@ func take_damage(damage) -> void:
 	
 func _die(was_killed) -> void:
 	alive = false
-	call_count += 1
-	print("i was called " + str(call_count))
 	if was_killed: 
 		for current_index: int in coins:
 			var coin: Node2D = preload("coin.tscn").instantiate()
